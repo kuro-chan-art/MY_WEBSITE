@@ -1,0 +1,338 @@
+:root {
+    --primary-color: #6c63ff;
+    --bg-color: #1a1a2e;
+    --card-bg: #16213e;
+    --text-color: #ffffff;
+    --text-muted: #a0a0a0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* Hero section layout control */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Make sure image + content stack properly */
+.about-img {
+    order: 1;
+}
+
+.about-text {
+    order: 2;
+}
+
+/* Move "More" button higher position feel */
+.hero .btn {
+    margin-top: 10px;
+    position: relative;
+    top: -10px; /* pushes it slightly upward */
+}
+.hero-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-content .btn {
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+
+
+/* 🌈 Animated Background */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #ff6b6b, #4ecdc4, #1a1a2e, #f9ca24);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+}
+
+/* Background animation keyframes */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Layout */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  padding: 10px 18px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  background: rgba(52, 152, 219, 0.1); /* soft inner color */
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+
+nav a:hover,
+nav a:focus {
+  background: var(--primary);     /* box fills with blue */
+  color: rgb(58, 52, 162);
+  border-color: #2980b9;
+}
+
+
+header {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+.logo span{
+    color: var(--primary-color);
+}
+.logo-frame {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid var(--primary);
+  background: rgb(46, 46, 80);
+  display: inline-flex;
+  align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero-content h1 span {
+    color: var(--primary-color);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease forwards 0.3s;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 1s ease forwards 0.6s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+}
+
+/* Section */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+}
+
+/* About */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: center;
+}
+
+.about-img {
+    border: 3px solid  rgb(175, 152, 152);
+    border-radius: 15px;
+    padding: 0;
+    background-color: rgb(175, 152, 152);
+    width: fit-content;
+}
+
+.about-img img {
+    width: 395px;
+    height: 395px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.about-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, var(--primary-color), #ff6584);
+    height: 400px;
+    margin: 0 auto;
+    animation: float 6s ease-in-out infinite;
+}
+
+.about-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+/* Skills */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.skill-tag {
+    background-color: var(--text-muted);
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+    transition: all 0.3s;
+}
+
+.skill-tag:hover {
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    background-color: var(--card-bg);
+    margin-top: 50px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2.5rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-img { height: 300px; }
+}
+
+
+/* Simple Contact Styling */
+        .contact {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .contact a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .contact a:hover {
+            background: #2980b9;
+        }
