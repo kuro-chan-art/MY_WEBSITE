@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/contact.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <div class="container">
+        <header>
+            <div class="logo-frame">
+                <div class="logo"><h4>Nex<span>Together</span></h4></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="contact.html">Contact</a></li> <!-- NEW -->
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!-- Contact Section -->
+    
+
+    
+    <div class="contact-wrapper">
+
+        <!-- LEFT: Contact Box -->
+        <div class="contact-box">
+            <h1>📞 Contact</h1>
+
+            <a href="mailto:chan189106@gmail.com">📧 Email</a>
+
+            <a href="https://t.me/@Kurocham" target="_blank" rel="noopener">
+                💬 Telegram
+            </a>
+
+            <a href="https://www.tiktok.com/@chan1454lyf" target="_blank" rel="noopener">
+                🎵 TikTok
+            </a>
+
+            <a href="tel:+959776649023">📱 Call Me</a>
+        </div>
+
+        <!-- RIGHT: Robot (REPLACES anything else) -->
+        <div class="robot">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.73/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/mZZPb8GE2o0XXnjt/scene.splinecode"></spline-viewer>
+        </div>
+
+    </div>
+
+    <script>
+    const robot = document.querySelector('.robot');
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let currentX = 0;
+    let currentY = 0;
+
+    document.addEventListener("mousemove", (e) => {
+        mouseX = (window.innerWidth / 2 - e.clientX) / 20;
+        mouseY = (window.innerHeight / 2 - e.clientY) / 20;
+    });
+
+    function animate() {
+        currentX += (mouseX - currentX) * 0.1;
+        currentY += (mouseY - currentY) * 0.1;
+
+        robot.style.transform = `translate(${currentX}px, ${currentY}px)`;
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+    </script>
+
+</body>
+</html>
