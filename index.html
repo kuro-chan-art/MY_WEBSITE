@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>NexTogether</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+        <header>
+            <div class="logo-frame">
+                <div class="logo"><h4>Nex<span>Together</span></h4></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="myself.html">About</a></li>
+                    <li><a href="skill.html">Skills</a></li>
+                    <li><a href="contact.html">Contact</a></li> <!-- NEW -->
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+<section class="hero">
+    <h1>I Turn <span>Ideas</span> Into Digital Art</h1>
+    <p>Creative Developer | Designer | Problem Solver</p>
+    <a href="#creativity" class="btn">Explore Creativity</a>
+</section>
+
+<section id="creativity" class="section">
+    <div class="container">
+        <h2 class="section-title">My Creative Power</h2>
+
+        <div class="creative-grid">
+
+            <div class="card float">
+                <h3>💻 Coding</h3>
+                <p>I build modern, responsive, and interactive websites.</p>
+            </div>
+
+            <div class="card">
+                <h3>🎨 Design</h3>
+                <p>I create clean UI/UX designs with creativity and precision.</p>
+            </div>
+
+            <div class="card float">
+                <h3>🎬 Video Editing</h3>
+                <p>I transform ideas into visual storytelling experiences.</p>
+            </div>
+
+            <div class="card">
+                <h3>✏ Drawing</h3>
+                <p>I express imagination through artistic creativity.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Your Creative Portfolio
+</footer>
+
+<script>
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+    anchor.addEventListener("click",function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href"))
+        .scrollIntoView({behavior:"smooth"});
+    });
+});
+</script>
+
+</body>
+</html>
